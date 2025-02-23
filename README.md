@@ -21,8 +21,8 @@ REQUISITOS
 
 INSTALACIÓN
 1. Clonar repositorio:
-   git clone https://github.com/tu-usuario/supermercado-simulacion.git
-   cd supermercado-simulacion
+   git clone git@github.com:Abraham-Orta/Supermercado.git
+   cd supermercado_proyecto
 
 2. Configurar rutas de imágenes en el código:
    - Modificar las rutas absolutas (/home/pancho/supermercado_proyecto/...) según tu estructura de archivos.
