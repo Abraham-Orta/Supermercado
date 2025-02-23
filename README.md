@@ -22,12 +22,13 @@ REQUISITOS
 INSTALACIÓN
 1. Clonar repositorio:
    git clone git@github.com:Abraham-Orta/Supermercado.git
+   
    cd supermercado_proyecto
 
-2. Configurar rutas de imágenes en el código:
+3. Configurar rutas de imágenes en el código:
    - Modificar las rutas absolutas (/home/pancho/supermercado_proyecto/...) según tu estructura de archivos.
 
-3. Compilar proyecto:
+4. Compilar proyecto:
    qmake && make
 
 USO
