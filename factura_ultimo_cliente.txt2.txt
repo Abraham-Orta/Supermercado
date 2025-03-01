@@ -1,0 +1,11 @@
+Factura para: Carlos Rivas
+Cédula: 26383208
+Teléfono: 04148964788
+
+Productos:
+Frijoles x 2 = $3.60
+Leche x 2 = $2.40
+Papas x 3 = $3.00
+Pollo x 1 = $5.00
+
+Total: $14.00

@@ -1,0 +1,89 @@
+Enunciado:
+
+El nuevo supermercado HiperMod, nos ha solicitado la elaboración del software para la gestión y manejo de
+una nueva caja automatizada, donde los clientes podrán seleccionar el producto y automáticamente se le
+agregara a un carrito de compra para luego despachar cuando complete el proceso de compra.
+
+Especificaciones:
+
+1. Tendrá un módulo de productos específicos a cargar el sistema automatizado, cada producto debe tener su
+debida identificación y descripción, stock y precio de venta.
+
+2. El cliente podrá realizar la selección de los productos y cantidad por cada producto, el carrito no puede
+superar el máximo de 30 artículos/productos, por cada producto solo podrá llevarse un máximo de 5
+artículos.
+
+3. Los artículos se introducen en el carrito de compras obedeciendo a una estructura de tipo pila de 10
+ítems/elementos, donde cada elemento de la pila es un tipo de producto.
+
+4. El proceso para seleccionar productos, cargar el carrito y realizar la compra solo puede durar un máximo de
+10 minutos (parametrizable), si el cliente supera el máximo de tiempo para realizar la compra el sistema lo
+enviará al final de la cola y le dará la oportunidad al siguiente cliente en espera.
+
+5. Los clientes se generarán de forma automática y se irán formando en una cola para esperar su turno (estimar
+tiempo de llegada de clientes entre 4 y 6 minutos (parametrizable)).
+
+6. Imprimir ticket de compra: muestre por pantalla Datos del cliente (cedula, nombre y apellido, teléfono), el
+contenido del carrito (referencia, nombre, precio unitario, cantidad y precio total) y la totalización del carrito.
+
+7. al detener la simulación se deben generar los siguientes reportes:
+
+• Cantidad de Clientes que se presentaron a comprar.
+• Cantidad de Clientes con compras realizadas.
+• Clientes que superaron el máximo de tiempo para comprar
+• Producto más vendido.
+• Totales de ventas.
+• Guardar/mostrar ultimas 10 facturas/tickets
+
+8. El proceso de la Caja Automatizada será simulado, tomar en cuenta las siguientes premisas:
+ Se debe contar con un menú principal para iniciar el proceso de las compras de los clientes.
+ El ticket de compra se debe mostrar en pantalla hasta que otro cliente termine su compra.
+ El contenido del carrito de cada cliente comprando se debe mostrar en pantalla.
+ Al momento del cliente llegar a la caja para el pago se debe visualizar tanto el vaciado del carrito de
+compra como la carga de la factura del cliente progresivamente.
+ Poder terminar la simulación en cualquier momento y mostrar los reportes.
+
+9. Se valorará:
+
+• Una buena modularización (use módulos/procedimientos/funciones)
+• Uso de tipos/estructuras de datos adecuados.
+• La ausencia de efectos laterales.
+• La legibilidad del código.
+
+La presencia y claridad de mensajes de salida, resultado de cada operación.
+Se recomienda el uso de interfaz grafica.
+Núm. Máx. Grupo: 3 integrantes.
+Núm. Mín. Grupo: 3 integrantes.(caso especial plantear con antelación).
+
+El proyecto está dividido en dos entregas.
+
+1° entrega:
+• Debe incluir todo el análisis y diseño del programa a desarrollar y
+• consideraciones para su desarrollo
+• Fecha de entrega 15/01/2025
+• Puntuación 20 %
+
+2° entrega
+
+ Código Fuente.
+•
+ Manual del Programador:
+•
+ Requerimientos Técnicos.
+•
+ Diagrama de Flujo General.
+•
+ Definición y descripción de principales variables y estructuras de datos usadas en el programa
+(Diccionario de Datos).
+•
+ Definición y descripción de principales funciones del programa (Diccionario de Funciones).
+•
+ Manual de Usuario.
+•
+ consideraciones durante su desarrollo
+•
+ ajustes de lo indicado en la primera entrega y justificación de dichos ajustes.
+•
+ Fecha de entrega 16/02/2025
+•
+ Puntuación 25 %
