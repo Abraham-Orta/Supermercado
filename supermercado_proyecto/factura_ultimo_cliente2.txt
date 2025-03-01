@@ -1,0 +1,10 @@
+Factura para: Carlos López
+Cédula: 26458347
+Teléfono: 041231000032
+
+Productos:
+Cebolla x 2 = $1.00
+Manzanas x 2 = $3.00
+Pan x 3 = $2.40
+
+Total: $6.40

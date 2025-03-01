@@ -1,0 +1,11 @@
+Factura para: Luis Rodríguez
+Cédula: 13044003
+Teléfono: 04129776541
+
+Productos:
+Manzanas x 1 = $1.50
+Pan x 1 = $0.80
+Papas x 3 = $3.00
+Pollo x 3 = $15.00
+
+Total: $20.30
