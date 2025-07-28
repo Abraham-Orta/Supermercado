@@ -1,8 +1,0 @@
-Factura para: Ana Rodríguez
-Cédula: 29503280
-Teléfono: 042633585294
-
-Productos:
-Manzanas x 1 = $1.50
-
-Total: $1.50
