@@ -426,7 +426,7 @@ class Factura {
             {"Pollo", 5.00},
             {"Pescado", 6.50},
             {"Lechuga", 0.90},
-            {"Repollo", 0.60},            sudo apt install build-essential
+            {"Repollo", 0.60},            
             {"Zanahorias", 0.80},
             {"Leche", 1.20},
             {"Arroz", 2.00},

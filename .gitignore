@@ -80,3 +80,8 @@ CMakeLists.txt.user*
 .rcc/
 .uic/
 /build*/
+
+facturas.txt
+factura.txt
+factura_ultimo_cliente.txt
+.vscode/
