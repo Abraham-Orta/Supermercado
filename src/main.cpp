@@ -365,15 +365,15 @@ class Factura {
         // Método para generar la factura
         void generarFactura() {
             contenido.clear(); // Limpia el contenido anterior
-            contenido += "=============================================\n";
-            contenido += "                SUPERMERCADO UNEG              \n";
-            contenido += "=============================================\n";
+            contenido += "================================================\n";
+            contenido += "                SUPERMERCADO UNEG               \n";
+            contenido += "================================================\n";
             contenido += "Cliente: " + cliente.getNombre() + "\n"; // Nombre del cliente
             contenido += "Cédula:  " + cliente.getCedula() + "\n"; // Cédula del cliente
             contenido += "Teléfono: " + cliente.getTelefono() + "\n"; // Teléfono del cliente
-            contenido += "------------------------------------------------------------------------------------------\n";
-            contenido += "Productos                     Cant.   Subtotal\n"; // Encabezado de la tabla
-            contenido += "------------------------------------------------------------------------------------------\n";
+            contenido += "------------------------------------------------\n";
+            contenido += "Productos                     Cant.   Subtotal  \n"; // Encabezado de la tabla
+            contenido += "------------------------------------------------\n";
 
             double total = 0.0; // Total a pagar
             QMap<QString, int> listaCompra = cliente.getListaCompra(); // Obtiene la lista de compras del cliente
@@ -391,9 +391,9 @@ class Factura {
                 total += subtotal; // Suma al total
             }
 
-            contenido += "------------------------------------------------------------------------------------------\n";
+            contenido += "------------------------------------------------\n";
             contenido += "Total a pagar: $" + QString::number(total, 'f', 2) + "\n"; // Muestra el total
-            contenido += "=============================================\n";
+            contenido += "================================================\n";
         }
 
         // Método para obtener el contenido de la factura
@@ -516,6 +516,10 @@ public:
 
         QTextEdit *editorTexto = new QTextEdit(this); // Editor de texto para mostrar la factura
         editorTexto->setReadOnly(true); // Hacer el editor de texto no editable
+        QFont font("Courier New"); // O "Monospace", "Consolas", "Lucida Console"
+        font.setPointSize(10); // Ajusta el tamaño de la fuente si es necesario
+        editorTexto->setFont(font);
+        editorTexto->setWordWrapMode(QTextOption::NoWrap); // Desactiva el ajuste de línea
 
         QFile archivo(rutaArchivo); // Abre el archivo de la factura
         if (archivo.open(QIODevice::ReadOnly | QIODevice::Text)) { // Si el archivo se abre correctamente
@@ -600,7 +604,7 @@ public:
                 }
 
                 if (indiceActual >= ruta.size()) { // Si el carrito llegó al final de la ruta
-                    emit carritoCompletado(cliente->getId(), "/home/abraham/supermercado_proyecto/factura_ultimo_cliente.txt"); // Emite la señal de finalización
+                    emit carritoCompletado(cliente->getId(), "../datos/facturas/factura_ultimo_cliente.txt"); // Emite la señal de finalización
                     if (scene()) scene()->removeItem(this); // Elimina el carrito de la escena
                     deleteLater(); // Libera la memoria del carrito
                 }
@@ -623,7 +627,7 @@ public:
         if (indiceActual < ruta.size()) {
             advance(1); // Avanza al siguiente punto
         } else {
-            emit carritoCompletado(cliente->getId(), "/home/abraham/supermercado_proyecto/factura_ultimo_cliente.txt"); // Emite la señal de finalización
+            emit carritoCompletado(cliente->getId(), "../datos/facturas/factura_ultimo_cliente.txt"); // Emite la señal de finalización
             if (scene()) scene()->removeItem(this); // Elimina el carrito de la escena
             deleteLater(); // Libera la memoria del carrito
         }
@@ -736,7 +740,7 @@ private slots:
         factura.generarFactura();
 
         // Guarda la factura del último cliente en un archivo
-        QFile archivoFacturaUltimo("/home/abraham/supermercado_proyecto/factura_ultimo_cliente.txt");
+        QFile archivoFacturaUltimo("../datos/facturas/factura_ultimo_cliente.txt");
         if (archivoFacturaUltimo.open(QIODevice::WriteOnly | QIODevice::Text)) {
             QTextStream out(&archivoFacturaUltimo);
             out << factura.getContenido(); // Escribe la factura en el archivo
@@ -755,7 +759,7 @@ private slots:
         }
 
         // Escribe todas las facturas en un archivo
-        QFile archivoFacturas("/home/abraham/supermercado_proyecto/facturas.txt");
+        QFile archivoFacturas("../datos/facturas/facturas.txt");
         if (archivoFacturas.open(QIODevice::WriteOnly | QIODevice::Text)) {
             QTextStream allInvoicesStream(&archivoFacturas);
             for (const QString &invoice : invoices) {
@@ -870,7 +874,7 @@ int main(int argc, char *argv[]) {
     QPixmap imagenEstante1("/home/abraham/supermercado_proyecto/estante1.png"); // Carga la imagen del estante 1
     QPixmap imagenEstante2("/home/abraham/supermercado_proyecto/estante2.png"); // Carga la imagen del estante 2
     QPixmap imagenEstante3("/home/abraham/supermercado_proyecto/estante3.png"); // Carga la imagen del estante 3
-    QPixmap imagenCaja("/home/abraham/supermercado_proyecto/caja.png"); // Carga la imagen de la caja
+    QPixmap imagenCaja("../img/caja.png"); // Carga la imagen de la caja
 
     if (imagenEstante1.isNull() || imagenCaja.isNull() || imagenEstante2.isNull() || imagenEstante3.isNull()) {
         qDebug() << "Error: No se pudieron cargar las imágenes de los elementos.";
@@ -956,7 +960,7 @@ int main(int argc, char *argv[]) {
     });
 
     QObject::connect(botonFacturas, &QPushButton::clicked, [&]() {
-        VentanaFactura *ventanaFactura = new VentanaFactura("/home/abraham/supermercado_proyecto/facturas.txt"); // Crea una ventana de facturas
+        VentanaFactura *ventanaFactura = new VentanaFactura("../datos/facturas/facturas.txt"); // Crea una ventana de facturas
         ventanaFactura->exec(); // Muestra la ventana de facturas
     });
 
