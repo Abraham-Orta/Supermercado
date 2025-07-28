@@ -512,14 +512,16 @@ class VentanaFactura : public QDialog {
 public:
     VentanaFactura(const QString &rutaArchivo, QWidget *padre = nullptr) : QDialog(padre) {
         setWindowTitle("Detalles de la Factura"); // Título de la ventana
-        setFixedSize(400, 600); // Tamaño fijo de la ventana
+        setFixedSize(420, 600); // Tamaño fijo de la ventana
 
         QTextEdit *editorTexto = new QTextEdit(this); // Editor de texto para mostrar la factura
         editorTexto->setReadOnly(true); // Hacer el editor de texto no editable
         QFont font("Courier New"); // O "Monospace", "Consolas", "Lucida Console"
         font.setPointSize(10); // Ajusta el tamaño de la fuente si es necesario
+        font.setWeight(QFont::Bold); // Pone el texto en negritas
         editorTexto->setFont(font);
         editorTexto->setWordWrapMode(QTextOption::NoWrap); // Desactiva el ajuste de línea
+        editorTexto->setTextColor(Qt::black); // Establece el color del texto a negro
 
         QFile archivo(rutaArchivo); // Abre el archivo de la factura
         if (archivo.open(QIODevice::ReadOnly | QIODevice::Text)) { // Si el archivo se abre correctamente
@@ -849,6 +851,12 @@ int main(int argc, char *argv[]) {
 
     QTextEdit *textEditFactura = new QTextEdit; // Editor de texto para mostrar la factura
     textEditFactura->setReadOnly(true); // Hace el editor de texto no editable
+    QFont fontFactura("Courier New");
+    fontFactura.setPointSize(10);
+    fontFactura.setWeight(QFont::Bold); // Pone el texto en negritas
+    textEditFactura->setFont(fontFactura);
+    textEditFactura->setWordWrapMode(QTextOption::NoWrap); // Desactiva el ajuste de línea
+    textEditFactura->setTextColor(Qt::black); // Establece el color del texto a negro
 
     QSplitter *splitter = new QSplitter(Qt::Vertical); // Splitter para dividir la ventana
     splitter->addWidget(widgetClientes); // Agrega el widget de clientes al splitter

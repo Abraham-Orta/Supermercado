@@ -81,7 +81,6 @@ CMakeLists.txt.user*
 .uic/
 /build*/
 
-facturas.txt
-factura.txt
+
 factura_ultimo_cliente.txt
 .vscode/
